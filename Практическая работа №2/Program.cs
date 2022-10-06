@@ -4,15 +4,14 @@
     {
         static void Main()
         {
-            WriteLineMessages();
-            int vybor = Convert.ToInt32(Console.ReadLine());
+            int vybor =1;
             while (vybor != 4)
             {
+                WriteLineMessages();
+                vybor = Convert.ToInt32(Console.ReadLine());
                 if (vybor == 1) RandomChislo();
                 if (vybor == 2) TableOfMultiply();
                 if (vybor == 3) DeliteliChisla();
-                WriteLineMessages();
-                vybor = Convert.ToInt32(Console.ReadLine());
             }
         }
 
@@ -53,7 +52,7 @@
 
         static void TableOfMultiply()
         {
-            Console.WriteLine("Таблица умножения: "); 
+            Console.WriteLine("Таблица умножения: ");
             for (int i = 1; i <= 9; i++) //rows
             {
                 Console.WriteLine("\t");
@@ -70,19 +69,19 @@
 
         static void DeliteliChisla()
         {
-                Console.WriteLine("Вывод делителей числа:");
-                Console.WriteLine("Введите число: ");
-                int chislo = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Делители: ");
-                for (int i = chislo; i <= chislo; i--)
+            Console.WriteLine("Вывод делителей числа:");
+            Console.WriteLine("Введите число: ");
+            int chislo = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Делители: ");
+            for (int i = chislo; i <= chislo; i--)
+            {
+                if ((chislo != 0 && i != 0) && (chislo % i == 0))
                 {
-                    if ((chislo != 0 && i != 0) && (chislo % i == 0))
-                    {
-                        if ((chislo / i) > 0) Console.Write(chislo / i + "\t");
+                    if ((chislo / i) > 0) Console.Write(chislo / i + "\t");
 
-                    }
                 }
-                Console.WriteLine("\n");
+            }
+            Console.WriteLine("\n");
         }
     }
 }
